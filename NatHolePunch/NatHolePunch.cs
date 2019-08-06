@@ -57,7 +57,7 @@ namespace NatHolePunchServer
 					ushort port = json["port"].AsUShort;
 					ushort listeningPort = json["clientPort"].AsUShort;
 
-					addresss = NetWorker.ResolveHost(addresss, port).Address.ToString();
+					addresss = HostResolver.Resolve(addresss, port).Address.ToString();
 
 					if (!hosts.ContainsKey(addresss))
 						return;
